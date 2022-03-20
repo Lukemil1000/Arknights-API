@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Affiliation {
+public class SkillActivation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,6 @@ public class Affiliation {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "affiliationId", cascade = CascadeType.ALL)
-    private List<Operator> operators;
+    @OneToMany(mappedBy = "SkillActivationId", cascade = CascadeType.ALL)
+    private List<Skill> skills;
 }

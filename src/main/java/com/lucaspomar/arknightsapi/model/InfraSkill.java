@@ -5,13 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Affiliation {
+public class InfraSkill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +19,11 @@ public class Affiliation {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "affiliationId", cascade = CascadeType.ALL)
-    private List<Operator> operators;
+    @Column(nullable = false)
+    private String description;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "operatorId", nullable = false)
+    private Operator operatorId;
 }
+

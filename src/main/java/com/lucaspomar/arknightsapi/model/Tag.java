@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Affiliation {
+public class Tag {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,7 @@ public class Affiliation {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "affiliationId", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "tags")
     private List<Operator> operators;
+
 }

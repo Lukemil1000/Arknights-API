@@ -3,6 +3,7 @@ package com.lucaspomar.arknightsapi.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -60,4 +61,17 @@ public class Operator {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "affiliationId", nullable = false)
     private Affiliation affiliationId;
+
+    @ManyToMany
+    @JoinTable(
+            name = "operator_tag",
+            joinColumns = @JoinColumn(name = "operatorId"),
+            inverseJoinColumns = @JoinColumn(name = "tagId"))
+    private List<Tag> tags;
+
+    @OneToMany(mappedBy = "operatorId", cascade = CascadeType.ALL)
+    private List<Talent> talents;
+
+    @OneToMany(mappedBy = "operatorId", cascade = CascadeType.ALL)
+    private List<InfraSkill> infraSkills;
 }
