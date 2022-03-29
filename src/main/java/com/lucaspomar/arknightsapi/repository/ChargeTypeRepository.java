@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ChargeTypeRepository extends JpaRepository<ChargeType, Long> {
+
+    ChargeType findByName(String name);
 }

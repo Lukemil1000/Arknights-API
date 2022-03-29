@@ -2,6 +2,7 @@ package com.lucaspomar.arknightsapi.controller;
 
 import com.lucaspomar.arknightsapi.model.Affiliation;
 import com.lucaspomar.arknightsapi.repository.AffiliationRepository;
+import org.apache.commons.text.WordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,14 +27,14 @@ public class AffiliationController {
         return affiliationRepository.save(affiliation);
     }
 
-    @GetMapping("/{affiliationId}")
-    public Affiliation searchName(@PathVariable String affiliationId) {
+    @GetMapping("/{affiliationIdOrName}")
+    public Affiliation search(@PathVariable String affiliationIdOrName) {
         try{
-            Long number = Long.parseLong(affiliationId);
+            Long number = Long.parseLong(affiliationIdOrName);
             return affiliationRepository.getById(number);
         }
         catch (NumberFormatException ex){
-            return affiliationRepository.findByName(affiliationId);
+            return affiliationRepository.findByName(WordUtils.capitalizeFully(affiliationIdOrName.toLowerCase()));
         }
     }
 
