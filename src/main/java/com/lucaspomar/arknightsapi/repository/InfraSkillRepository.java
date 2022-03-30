@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface InfraSkillRepository extends JpaRepository<InfraSkill, Long> {
+
+    InfraSkill findByName(String name);
 }

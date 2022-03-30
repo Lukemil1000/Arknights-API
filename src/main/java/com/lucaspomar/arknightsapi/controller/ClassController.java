@@ -42,7 +42,7 @@ public class ClassController {
         return classRepository.save(classs);
     }
 
-    @DeleteMapping("/ClassId")
+    @DeleteMapping("/{ClassId}")
     public ResponseEntity<String> delete(@PathVariable Long classId) {
         classRepository.deleteById(classId);
         return new ResponseEntity<>("Deleted", HttpStatus.OK);

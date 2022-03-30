@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SkillActivationRepository extends JpaRepository<SkillActivation, Long> {
+
+    SkillActivation findByName(String name);
 }
