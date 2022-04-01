@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SubclassRepository extends JpaRepository<Subclass, Long> {
+
+    Subclass findByName(String name);
 }
