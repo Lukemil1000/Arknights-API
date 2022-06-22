@@ -1,5 +1,7 @@
 package com.lucaspomar.arknightsapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Class {
 
     @Id
@@ -23,6 +26,6 @@ public class Class {
     @Column(nullable = false)
     private String icon;
 
-    @OneToMany(mappedBy = "classId", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "classId", cascade = CascadeType.MERGE)
     private List<Subclass> subclasses;
 }
