@@ -22,7 +22,14 @@ INSERT INTO CLASS (icon, name) VALUES ('https://aceship.github.io/AN-EN-Tags/img
 
 INSERT INTO SUBCLASS (name, icon, trait, class_id) VALUES ('Artilleryman', 'https://aceship.github.io/AN-EN-Tags/img/ui/subclass/sub_aoesniper_icon.png',
 'Attack deals Physical Splash Damage', 1);
-/*
+
+INSERT INTO SUBCLASS (name, icon, trait, class_id) VALUES ('Lord', 'https://aceship.github.io/AN-EN-Tags/img/ui/subclass/sub_lord_icon.png',
+'Can perform ranged attack, however attack decreased to 80% when attacking enemies with ranged attack', 2);
+
 INSERT INTO OPERATOR (name, stars, gender, hp, attack, defense, magic_defense, redeploy, cost, block, attack_time, e1Image, e2Image, subclass_id, affiliation_id)
 VALUES ('W', 6, 'Female', 1605, 912, 133, 0, 70, 29, 1, 2.8, 'https://aceship.github.io/AN-EN-Tags/img/characters/char_113_cqbw_1.png',
-'https://aceship.github.io/AN-EN-Tags/img/characters/char_113_cqbw_2.png', 1, 1);*/
+'https://aceship.github.io/AN-EN-Tags/img/characters/char_113_cqbw_2.png', 1, 1);
+
+INSERT INTO OPERATOR (name, stars, gender, hp, attack, defense, magic_defense, redeploy, cost, block, attack_time, e1Image, e2Image, subclass_id, affiliation_id)
+VALUES ('Thorns', 6, 'Male', 2612, 711, 402, 10, 70, 20, 2, 1.3, 'https://aceship.github.io/AN-EN-Tags/img/characters/char_293_thorns_1.png',
+'https://aceship.github.io/AN-EN-Tags/img/characters/char_293_thorns_2.png', 2, 2);
