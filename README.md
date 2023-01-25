@@ -7,7 +7,7 @@ Arknights API é uma aplicação backend contruída em Java.
 A aplicação consiste em uma API Rest capaz de listar, criar, atualizar e deletar "Operators", personagens do jogo mobile [Arknights](https://www.arknights.global) no qual essa API toma como referência.
 
 ## Diagrama de classes
-![DiagramaArknights](https://user-images.githubusercontent.com/24193275/214706273-fc3a77d5-39ef-4976-bfb8-b88ba2ad0174.jpg)
+![DiagramaArknights](https://user-images.githubusercontent.com/24193275/214707518-cf38c69d-bf9b-4dff-a7cb-3fcf5175072d.jpg)
 
 # Tecnologias utilizadas
 
